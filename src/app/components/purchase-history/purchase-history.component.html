@@ -1,0 +1,143 @@
+<ngx-spinner
+        size="large"
+        color="#d60d39"
+        type="ball-atom">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<head>
+    <title>Purchase-History</title>
+</head>
+
+<div class="title" *ngIf="!isNoItem">
+    <h4 style="text-align: center">purchase-history</h4>
+</div>
+
+<div class="container" style="font-family: Poppins, serif" id="content" #content>
+    <div>
+        <div class="main-view container" *ngFor="let allDetail of abc; index as i" id="contentToConvert">
+            <div class="row purchase-top-bar">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 top-detail">
+                    <span><span style="font-weight: bold"> order id   : </span>{{allDetail[0].id}}<br></span>
+                    <span><span
+                            style="font-weight: bold"> order date   : </span>{{allDetail[0].orderDate | date}}
+                        <br></span>
+                    <span><span style="font-weight: bold"> order time   : </span>{{allDetail[0].orderTime}}<br></span>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 top-detail">
+<span><span
+        style="font-weight: bold"> payment type : </span>{{allDetail[0].paymentMethod}}<br></span>
+                    <span><span style="font-weight: bold"> order status : </span>{{allDetail[0].status}}<br></span>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 top-detail">
+<span><span style="font-weight: bold">shipping address <br></span>{{allDetail[1].addressOne}}
+    <br>{{allDetail[1].addressTwo}}<br>{{allDetail[1].city}}<br>
+    {{allDetail[1].postalCode}}<br>{{allDetail[1].country}}</span>
+                </div>
+            </div>
+
+            <div class="item-set">
+                <div class="orderDetail-text"><span>order details <br> <span
+                        style="color: #d60d39; font-weight: lighter">please rate item</span></span>
+                </div>
+                <div style="width: 100%; text-align: center;">
+                    <table class="table table-striped table-responsive item-table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"></th>
+                            <th scope="col">model</th>
+                            <th scope="col">brand</th>
+                            <th scope="col">qty</th>
+                            <th scope="col">price</th>
+                            <th scope="col">rate</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let detail of allDetail[2]; index as j;" style="cursor: pointer">
+                            <th scope="row">{{ j + 1 }}</th>
+                            <td><img style="width: 30px; height: 30px;" src="{{detail.image}}"></td>
+                            <td>{{detail.name}}</td>
+                            <td>{{detail.brand}}</td>
+                            <td>{{detail.qty}}</td>
+                            <td>{{detail.price | currency: 'USD'}}</td>
+                            <td>
+                                <div style="text-align: center;">
+                                    <ngb-rating class="star" [rate]="0" [(rate)]="itemRate"
+                                                style="color: #d60d39; display: block;"></ngb-rating>
+                                    <textarea class="rate-input" style="display: block;" #review
+                                              placeholder="enter your feedback"></textarea>
+                                    <button class="rate-btn btn"
+                                            (click)="addRate(review.value,detail.id)">rate
+                                    </button>
+                                </div>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="btn-set">
+                <button class="btn btn-set-btn" (click)="open(allDetail[0].id,modalContent)">view invoice</button>
+                <button class="btn btn-set-btn" data-target="#ratingModal"
+                        (click)="sendOrderIdToFeedback(allDetail[0].id)"
+                        data-toggle="modal">feedback
+                </button>
+                <button class="btn btn-set-btn" data-target="#complainModal"
+                        (click)="sendOrderIdToComplaint(allDetail[0].id)"
+                        data-toggle="modal">complain
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ratingModal" tabindex="-1" role="dialog" aria-labelledby="forgetModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 20px">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="">
+                <app-rating></app-rating>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="complainModal" tabindex="-1" role="dialog" aria-labelledby="forgetModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 20px">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="">
+                <app-complain></app-complain>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isNoItem" class="not-yet-four">
+    <img src="../../../assets/empty-cart.png" class="not-yet-image-four">
+    <h4 class="not-yet-text-four">no purchase orders yet</h4>
+    <h6 class="not-yet-sub-text-four">go back and buy items ...!</h6>
+</div>
+
+<ng-template #modalContent let-c="close" let-d="dismiss">
+    <div class="modal-body">
+        <button type="button" class="close" aria-label="Close" style="outline: none" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <app-invoice [orderId]="id" id="content1" #content1></app-invoice>
+        <div class="btn-print">
+            <button type="button" class="btn print-btn" (click)="downloadInvoice()">print</button>
+        </div>
+    </div>
+</ng-template>

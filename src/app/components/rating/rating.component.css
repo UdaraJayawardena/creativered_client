@@ -1,0 +1,40 @@
+.feedback {
+    font-family: Poppins, serif;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.star {
+    color: #d60d39;
+    margin-right: 10px !important;
+}
+
+.submit-btn {
+    width: 100px;
+    border-radius: 20px;
+    font-family: Poppins, serif;
+    background-color: #d60d39;
+    color: white;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.message {
+    width: 90%;
+    height: 150px;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px 10px;
+    outline: none;
+}
+
+.topicText {
+    text-align: right;
+    display: inline-block;
+}
+
+.starDisplay {
+    text-align: left;
+    display: inline-block;
+}

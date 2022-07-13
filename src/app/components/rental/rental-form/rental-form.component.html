@@ -1,0 +1,31 @@
+<body style="background-color: #F2F2F2; height: 420px;">
+<div style="width: 100%; height: 50vh; text-align: center;">
+    <div style="width: 90%; margin-left: 5%">
+        <label>
+            <input class="name-input form-control" (focus)="nameClick()" #name placeholder="full name" type="text">
+            <small class="errorMessage" *ngIf="nameInput">please enter name</small>
+            <small class="errorMessage" *ngIf="nameValue">please enter correct name</small>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input class="email-input form-control" (focus)="emailClick()" #email
+                   placeholder="email" type="text">
+            <small class="errorMessage" *ngIf="emailInput">please enter email</small>
+            <small class="errorMessage" *ngIf="emailValue">please enter correct email</small>
+        </label>
+    </div>
+    <div>
+        <label>
+            <textarea placeholder="message" #message (focus)="messageClick()"
+                      class="message-input form-control"></textarea>
+            <small class="errorMessage" *ngIf="messageInput">please enter message</small>
+            <small class="errorMessage" *ngIf="messageValue">please enter correct message</small>
+        </label>
+    </div>
+    <div>
+        <button class="send-btn btn" (click)="sendMessage(name.value,email.value,message.value)">send</button>
+    </div>
+</div>
+<div style="width: 100%; height: 50px;"></div>
+</body>

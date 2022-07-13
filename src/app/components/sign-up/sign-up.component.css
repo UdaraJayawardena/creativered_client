@@ -1,0 +1,70 @@
+.main-sign-in {
+    font-family: Poppins, serif;
+}
+
+.topic {
+    width: 100%;
+    text-align: center;
+    font-size: 150%;
+}
+
+.sign-up-input {
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-left: 15%;
+    border-color: #d60d39;
+    outline: none;
+    text-align: center;
+}
+
+.sign-up-input-a {
+    width: 83%;
+    margin-left: 17%;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 5%;
+    border-color: #d60d39;
+    outline: none;
+    text-align: center;
+}
+
+.remember-me {
+    margin-top: 5%;
+    align-items: center;
+    margin-left: 5%
+}
+
+.check-box {
+    display: inline-block;
+    cursor: pointer
+}
+
+.remember-me-text {
+    display: inline-block;
+    margin-left: 5%
+}
+
+.sign-in-btn {
+    border-radius: 20px;
+    background-color: #d60d39;
+    text-align: center;
+    outline: none;
+    color: white;
+    width: 70%;
+    height: 50px;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.forgot-password {
+    margin-top: 5%;
+    margin-left: 50%;
+}
+
+.signup1 {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}

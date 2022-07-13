@@ -1,0 +1,394 @@
+.all {
+    font-family: Poppins, serif;
+}
+
+.frmdata label {
+    font-size: 14px;
+}
+
+.frmdata input {
+    font-size: 14px;
+    height: 35px;
+}
+
+.imageDiv {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+#datediv h6 {
+    padding-right: 10px;
+}
+
+.image {
+    text-align: center;
+}
+
+.itemPrice {
+    height: 100px;
+    width: 400px;
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.itemDetail {
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.qtyText {
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    position: absolute;
+}
+
+.combobox {
+    margin-left: 10px;
+    width: 70px;
+}
+
+.setTheMarginBottom {
+    margin-bottom: 20px;
+}
+
+.shipsText {
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 40px;
+}
+
+.shippingText {
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.shippingDescription {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.formDataSet1 {
+    width: 50%;
+    margin-top: 20px;
+    position: absolute;
+    font-size: 15px;
+    margin-left: 450px;
+}
+
+.formDataSet2 {
+    width: 50%;
+    margin-top: 20px;
+    font-size: 15px;
+    position: relative;
+}
+
+.inputSet table {
+    border-color: white !important;
+}
+
+.inputSet {
+    margin-top: 12px;
+    width: 250px;
+    border-color: transparent;
+    border-bottom-color: black;
+    border-bottom-width: thin;
+    outline: none;
+}
+
+.payMethodText {
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.payMethodDescription {
+    font-size: 15px;
+    position: relative;
+}
+
+.btn-group-lg {
+    background-color: #d60d39;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    width: 90px;
+    height: 40px;
+    margin-left: 20%;
+    margin-bottom: 40px;
+    margin-top: 50px;
+}
+
+.btn-group-lgh {
+    background-color: #d60d39;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    width: 120%;
+    height: 40px;
+    margin-left: 4%;
+    margin-right: 4%;
+    outline: transparent;
+}
+
+.btn-group-lghh {
+    background-color: #d60d39;
+    border: none;
+    border-radius: 10%;
+    color: white;
+    text-align: center;
+    height: 40px;
+    margin-left: 4%;
+    margin-right: 4%;
+    outline: transparent;
+}
+
+.allSet1 {
+    position: absolute;
+    margin-top: 60px;
+}
+
+.allSet2 {
+    position: relative;
+    margin-left: 450px;
+    margin-top: 30px;
+}
+
+.nextBtn {
+    background-color: #d60d39;
+    border-radius: 20px;
+    font-family: Poppins, serif;
+}
+
+.nextBtn:hover {
+    background-color: #373636;
+    border-color: transparent;
+}
+
+.shipping-detail-input {
+    border-radius: 10px;
+    outline: none;
+}
+
+.shipping-inputs {
+    background-color: #F2F2F2;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.main-sign-in {
+    font-family: Poppins, serif;
+}
+
+.topic {
+    width: 100%;
+    text-align: center;
+    font-size: 150%;
+}
+
+.username-text {
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-left: 15%;
+    border-color: #d60d39;
+    outline: none;
+    text-align: center;
+}
+
+.email-text {
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-left: 15%;
+    border-color: #d60d39;
+    outline: none;
+    text-align: center;
+}
+
+.password-text {
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-left: 15%;
+    border-color: #d60d39;
+    outline: none;
+    text-align: center;
+}
+
+.remember-me {
+    margin-top: 5%;
+    align-items: center;
+    margin-left: 5%
+}
+
+.check-box {
+    display: inline-block;
+    cursor: pointer
+}
+
+.remember-me-text {
+    display: inline-block;
+    margin-left: 5%
+}
+
+.sign-in-btn {
+    border-radius: 20px;
+    background-color: #d60d39;
+    text-align: center;
+    outline: none;
+    color: white;
+    width: 70%;
+    height: 50px;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.forgot-password {
+    margin-top: 5%;
+    margin-left: 50%;
+}
+
+.signup1 {
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+.complain-view {
+    font-size: 15px;
+}
+
+.complain-order-id {
+    font-weight: bold;
+    text-align: left;
+}
+
+.complain-type {
+    text-align: right;
+    font-weight: bold;
+}
+
+.complainBackground {
+    background-color: #f2f2f2;
+}
+
+.complain-body {
+    margin: 10px 0;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d60d39;
+    border-radius: 20px;
+}
+
+.userName {
+    margin: 10px 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+.complainDate {
+    margin: 10px 0;
+    text-align: right;
+    font-weight: bold;
+}
+
+.complain-message {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.adminName {
+    margin: 10px 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+.reply {
+    text-align: right;
+    margin: 10px 0;
+}
+
+.replyBtn {
+    outline: none;
+    border-width: 1px;
+    background-color: #d60d39;
+    font-size: 15px;
+    font-weight: bold;
+    width: 75px;
+    color: white;
+    border-radius: 15px;
+}
+
+.replyBtn:hover {
+    background-color: #3a3939;
+}
+
+.reply-body {
+    margin: 10px 0;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d60d39;
+    border-radius: 20px;
+}
+
+.reply-message {
+    margin: 10px;
+    width: 100%;
+    height: 100px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+}
+
+.not-yet-one {
+    width: 100%;
+    min-height: 400px;
+    text-align: center;
+}
+
+.not-yet-text-one {
+    color: #d60d39;
+    padding: 125px 0;
+}
+
+.country-combo {
+    border-radius: 10px;
+}
+
+.remove-btn {
+    background-color: #d60d39;
+    font-family: Poppins, serif;
+    color: white;
+    font-size: 12px;
+    margin-top: -5px;
+    border-radius: 15px;
+}
+
+.remove-btn:hover {
+    background-color: #3a3939;
+}
+
+.sub-text {
+    color: #3a3939;
+}

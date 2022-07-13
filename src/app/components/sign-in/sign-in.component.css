@@ -1,0 +1,109 @@
+.main-sign-in {
+    font-family: Poppins, serif;
+}
+
+.topic {
+    width: 100%;
+    text-align: center;
+    font-size: 150%;
+}
+
+.sign-in-input {
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-left: 15%;
+    border-color: #d60d39;
+    outline: none;
+    text-align: center;
+}
+
+.remember-me-one {
+    width: 100%;
+    margin-top: 5%;
+    align-items: center;
+    text-align: center;
+}
+
+.check-box {
+    display: inline-block;
+    cursor: pointer
+}
+
+.remember-me-text {
+    display: inline-block;
+    margin-left: 5%
+}
+
+.sign-in-btn {
+    border-radius: 20px;
+    background-color: #d60d39;
+    text-align: center;
+    outline: none;
+    color: white;
+    width: 70%;
+    height: 50px;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.bar-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgot-password-one {
+    text-align: center;
+    width: 50%;
+    display: inline;
+    margin-right: 20px;
+}
+
+.create-account-one {
+    text-align: center;
+    width: 50%;
+    display: inline;
+}
+
+@media only screen and (max-width: 768px) {
+    .forgot-password {
+        margin-left: 30%;
+        bottom: 0px;
+    }
+
+    .forgot-password-one {
+        display: block;
+        font-size: 13px;
+        margin-left: 25%;
+    }
+
+    .create-account-one {
+        display: block;
+        font-size: 13px;
+        margin-left: 25%;
+    }
+
+    .bar-bottom {
+        margin-top: 10px;
+    }
+}
+
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}

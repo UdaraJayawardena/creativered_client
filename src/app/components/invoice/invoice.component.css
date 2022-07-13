@@ -1,0 +1,122 @@
+.logo {
+    text-align: center;
+}
+
+.logo-img {
+    width: 30%;
+    height: 30%;
+}
+
+.invoice-title {
+    text-align: center;
+    font-size: 13px;
+    font-family: Poppins, serif;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.invoice-title-sub {
+    font-size: 10px;
+    font-weight: normal;
+    color: #d60d39;
+}
+
+.main-order-details {
+    text-align: left;
+    font-size: 12px;
+    font-family: Poppins, serif;
+}
+
+.important-values {
+    font-weight: bold;
+}
+
+.item-table {
+    width: 90%;
+}
+
+.ordered-item-title-left {
+    font-size: 12px;
+    font-family: Poppins, serif;
+    font-weight: bold;
+    text-align: left;
+}
+
+.ordered-item-title-center {
+    font-size: 12px;
+    font-family: Poppins, serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ordered-item-title-right {
+    font-size: 12px;
+    font-family: Poppins, serif;
+    font-weight: bold;
+    text-align: right !important;
+}
+
+.ordered-item-content-left {
+    font-size: 12px;
+    font-family: Poppins, serif;
+    text-align: left;
+}
+
+.ordered-item-content-center {
+    font-size: 12px;
+    font-family: Poppins, serif;
+    text-align: center;
+}
+
+.ordered-item-content-right {
+    font-size: 12px;
+    font-family: Poppins, serif;
+    text-align: right;
+    font-weight: bold;
+}
+
+.orderd-item-details {
+    text-align: center;
+    font-family: Poppins, serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.payment-details {
+    text-align: center;
+    font-family: Poppins, serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.payment-method-title {
+    text-align: left;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Poppins, serif;
+}
+
+.payment-address {
+    text-align: left;
+    font-weight: normal;
+}
+
+.shipping-address {
+    text-align: left;
+    font-weight: normal;
+}
+
+.grand-total {
+    text-align: right;
+    font-weight: bold;
+    font-family: Poppins, serif;
+    font-size: 12px;
+}
+
+.site-detail {
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Poppins, serif;
+}

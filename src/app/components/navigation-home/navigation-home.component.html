@@ -1,0 +1,164 @@
+<nav class="navbar navbar-expand-lg navbar-light " id="upper-bar">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav headdata">
+            <li class="nav-item">
+                <a class="nav-link items-one" routerLink="/aboutUs">about us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link items-one" routerLink="/rental">rentals</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link items-one" routerLink="/gallery">gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link items-one" routerLink="/contactUs">contact us</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <a class="navbar-brand">
+        <img src="../../../assets/CreativeRedLogo.png" class="logo-style" id="logo" alt="" routerLink="/home">
+    </a>
+
+    <ul class="nav">
+        <li class="nav-item">
+
+            <div class="btn-group dropleft nav-link">
+                <div class="dropdown-toggle dropdown-style" id="dropdownMenuButton" data-toggle="dropdown">
+                    <img src="{{profileimage}}" id="proid" (mouseover)="startHover()" class="nav-icons imghv">
+                </div>
+                <div id="divitem" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a id="signIn" class="dropdown-item" data-toggle="modal" data-target="#signInModal">sign
+                        in
+                    </a>
+                    <a id="signUp" class="dropdown-item" data-toggle="modal" data-target="#signUpModal">sign
+                        up
+                    </a>
+                    <a class="dropdown-item" (click)="goPurchaseHistory()">purchase history</a>
+                    <a class="dropdown-item" (click)="goWishList()">wishlist</a>
+                    <a class="dropdown-item" (click)="goProfile()">profile</a>
+                    <a id="logouta" class="dropdown-item" (click)="logOut()">logout</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"><img (mouseover)="startHover()"
+                                     src="{{wishlistimage}}" class="nav-icons" id="wishlist-icon" alt=""
+                                     (click)="goWishList()">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"><img (mouseover)="startHover()"
+                                     src="{{cartimage}}" class="nav-icons"
+                                     id="cart-icon" alt="" routerLink="/cart"></a>
+        </li>
+        <li class="cart-count-li">
+            <div class="cart-count" id="cart-count">{{cartCount}}</div>
+        </li>
+    </ul>
+
+</nav>
+
+
+<nav class="navbar" id="lower-bar">
+
+    <div class="col-1 options-col">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link items-two" style="color: white;" (click)="getDeals()">deals</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="content-bar" class="navbar col-10">
+        <nav class="nav center-items">
+            <li>
+                <div class="dropdown" *ngFor="let category of categories">
+                    <button class="dropbtn" (mouseover)="getProduct(category.id)">{{category.category |
+                        lowercase}}
+                    </button>
+                    <div id="itemdrp" class="dropdown-content">
+                        <a *ngFor="let product of productByCategory" (click)="viewItems(product.id)">
+                            {{product.productType | lowercase}}
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </nav>
+    </div>
+
+    <nav class="nav center-items-mobile">
+        <a class="nav-link items-four" style="color: white;" routerLink="/itemView">deals</a>
+
+        <div class="dropdown dropright">
+            <button class="dropbtn">category</button>
+            <div class="dropdown-content">
+                <div class="btn-group " *ngFor="let category of categories" style="display: grid; font-size: 17px;">
+                    <a class=" dropdown-toggle dropdown-category" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false" (mouseenter)="getProduct(category.id)">
+                        {{category.category | lowercase}}
+                    </a>
+                    <div class="dropdown-menu dropdown-product">
+                        <a href="#" *ngFor="let product of productByCategory" style="width: 150px"
+                           (click)="viewItems(product.id)"
+                           routerLink="/itemView">{{product.productType | lowercase}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="nav-link items-four sidetitle" routerLink="/comparision">compare</a>
+    </nav>
+
+    <div class="col-1 options-col">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link items-two sidetitle" routerLink="/comparision">compare</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 20px">
+            <app-sign-in></app-sign-in>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 20px">
+            <app-sign-up></app-sign-up>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="forgetModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 20px">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="">
+                <app-forget-password></app-forget-password>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#signInModal">Open Modal</button>

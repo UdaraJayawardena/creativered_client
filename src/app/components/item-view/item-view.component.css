@@ -1,0 +1,194 @@
+.title {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.addToCartBtn {
+    font-family: Poppins, serif;
+    height: 35px;
+    background-color: #d60d39;
+    color: white;
+    border-radius: 20px;
+}
+
+#srtitm a:hover {
+    background: #202020;
+    color: white;
+}
+
+#srtitm a {
+    font-family: 'Yu Gothic UI Semilight';
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#viewimg {
+    height: 50%;
+    width: 70%;
+    cursor: pointer;
+}
+
+.tooltiptext {
+    display: none;
+    width: 120px;
+    background-color: #D60D39;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 999999999999;
+}
+
+.go:hover .tooltiptext {
+    display: block;
+}
+
+.filteringOption {
+    width: 100%;
+    height: auto;
+    background-color: #3a3939 !important;
+    margin-top: 20px;
+    font-family: Poppins, serif;
+}
+
+.priceRangeSlider {
+    width: 100%;
+}
+
+.displayAs {
+    color: white;
+}
+
+.displayAs a {
+    cursor: pointer;
+}
+
+.wishList {
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+}
+
+.compare {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.addToCartBtn:hover {
+    background-color: #373636;
+    color: white;
+}
+
+.cards {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.pagination-style {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.gg {
+    width: 35px;
+    height: 35px;
+}
+
+.cards .img-top {
+    width: 35px;
+    height: 35px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.cards:hover .img-top {
+    display: inline;
+    cursor: pointer;
+}
+
+.no-item {
+    text-align: center;
+    min-height: 400px;
+}
+
+.modal-content-style {
+    border-radius: 20px;
+}
+
+.no-item-image {
+    height: 300px;
+    padding-top: 100px;
+}
+
+.no-item-text {
+    color: #d60d39;
+}
+
+.no-item-sub-text {
+    color: #3a3939;
+    margin-bottom: 75px;
+}
+
+
+.paragraph-style {
+    color: white;
+}
+
+.my-style-one {
+    margin-top: 15px;
+}
+
+.my-style-two {
+    padding-bottom: 5px;
+    text-align: center;
+    height: auto;
+}
+
+.my-style-three {
+    color: white !important;
+    background-color: #3a3939 !important;
+    text-align: center;
+}
+
+.my-style-four {
+    margin-top: 15px;
+}
+
+.my-style-five {
+    text-align: center;
+    background-color: white;
+}
+
+.my-style-six {
+    position: fixed;
+    z-index: 1000000000000;
+    width: 80%;
+    text-align: center;
+    top: 20px;
+    left: 10%
+}
+
+.card-style {
+    width: 18rem;
+    display: inline-block;
+    margin: 1%;
+    cursor: pointer;
+}
+
+.card-title-style {
+    height: 50px;
+}
+
+.card-title-style-one {
+    color: #d60d39;
+}

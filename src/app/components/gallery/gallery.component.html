@@ -1,0 +1,15 @@
+<head>
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+
+<div class="fullGallery jumbotron container-fluid">
+    <h1 class="gallery">Gallery</h1>
+    <div class="liner"></div>
+    <div class="row gallery-row">
+        <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let image of galleryImage; index as i">
+            <img src="{{image.path}}" (click)="lightbox.open(galleryImage, {index: i})" alt="images"
+                 class="img-fluid gallery-image">
+        </div>
+    </div>
+</div>

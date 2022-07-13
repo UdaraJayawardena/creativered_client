@@ -1,0 +1,56 @@
+.outer {
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 10px;
+    width: 45%;
+    height: 70%;
+    background-color: white;
+    border-radius: 30px;
+}
+
+#itembr4:hover {
+    background-color: #d60d39;
+    color: white;
+    cursor: pointer;
+}
+
+#searchitemdiv2 {
+    display: none;
+    margin-left: 13px;
+}
+
+.inner-search {
+    position: relative;
+    font-family: Poppins, serif;
+    margin-left: 18px;
+    height: 100%;
+    width: 60%;
+    outline: none;
+    border: none
+}
+
+.inner-icon {
+    position: absolute;
+    width: 25px;
+    margin-top: 5px;
+    right: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .outer {
+        width: 93%;
+    }
+
+    .inner-search {
+        width: 75%;
+    }
+}
+
+.input-style {
+    border-bottom: 1px solid #e3e1ee;
+    border-style: none;
+    padding-left: 5px;
+    width: 95%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

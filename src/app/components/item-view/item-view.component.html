@@ -1,0 +1,100 @@
+<ngx-spinner
+        size="large"
+        color="#d60d39"
+        type="ball-atom">
+    <p class="paragraph-style"> Loading... </p>
+</ngx-spinner>
+
+<head>
+    <title>Deal</title>
+</head>
+
+<div class="title">
+    <h4>{{topic}}</h4>
+</div>
+
+
+<div class="filteringOption">
+    <div class="my-style-two container-fluid row">
+        <div class="col-xl-2 col-lg-1"></div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+            <app-price-range-slider></app-price-range-slider>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 my-style-one">
+            <div class="complain-type-combo">
+                <div class="form-group">
+                    <select class="custom-select my-style-three" #complainType
+                            (click)="selectItemByBrand(complainType.value)">
+                        <option selected>select brand</option>
+                        <option *ngFor="let brand of allBrands">{{brand}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-lg-1"></div>
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 my-style-four">
+            <div class="complain-type-combo">
+                <div class="form-group">
+                    <select class="custom-select my-style-three" #sortType (click)="getSortType(sortType.value)">
+                        <option selected>select sort type</option>
+                        <option>price low to high</option>
+                        <option>price high to low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron my-style-five" *ngIf="!noItemFound">
+    <ngb-alert class="my-style-six"
+               *ngIf="successMessage"
+               type="danger" (close)="successMessage = null">{{ successMessage }}
+    </ngb-alert>
+
+    <div class="card card-style"
+         *ngFor="let item of allItems | paginate: { itemsPerPage: 4, currentPage: page}"
+         ngbTooltip="discount : {{item.discount}}%">
+        <img src="{{item.image}}" class="card-img-top go" alt="..." (click)="goProductView(item)">
+        <span class="tooltiptext">Discount</span>
+        <div class="card-body">
+            <h5 class="card-title card-title-style">{{item.name}}</h5>
+            <h5 *ngIf="item.discount !== 0" class="card-title card-title-style-one">$ {{item.price - (item.price /
+                item.discount) | number:'1.2-2'}}</h5>
+            <h5 *ngIf="item.discount === 0" class="card-title card-title-style-one">$ {{item.price |
+                number:'1.2-2'}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <div class="card-body" style="text-align: center">
+                <div class="cards" style=" margin-right: 10px;">
+                    <img class="gg" src="../../../assets/compare_one.jpg"
+                         (click)="sendItemToCompare(item.id)"
+                         routerLink="/comparision">
+                    <img class="img-top" src="../../../assets/compare_two.jpg" (click)="sendItemToCompare(item.id)"
+                         routerLink="/comparision">
+                </div>
+                <button (click)="addCart(item.id)" class="addToCartBtn btn">add to cart</button>
+                <div class="cards">
+                    <img class="gg" src="../../../assets/wishList_one.jpg" (click)="sendItemToCompare(item.id)">
+                    <img class="img-top" src="../../../assets/wishList_two.jpg" (click)="addToWishList(item.id,signIn)">
+                </div>
+            </div>
+        </ul>
+    </div>
+    <pagination-controls class="pagination-style" (pageChange)="page = $event"></pagination-controls>
+</div>
+
+<div class="no-item" *ngIf="noItemFound">
+    <img class="no-item-image" src="../../../assets/error.jpg" alt="">
+    <h4 class="no-item-text">No items found !</h4>
+    <h6 class="no-item-sub-text">search item again or select item by category</h6>
+</div>
+
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content-style">
+        </div>
+    </div>
+</div>
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#signInModal">Open Modal</button>

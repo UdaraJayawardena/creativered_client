@@ -1,0 +1,11 @@
+<div class="outer">
+    <label for="search-text3"></label>
+    <input type="text" class="inner-search" title="search" #searchvalue3
+           (keyup)="searchkeyup3(searchvalue3.value)" id="search-text3" placeholder="search here....">
+    <img src="../../../assets/Search_50px_1.png" class="inner-icon" alt="search icon">
+    <div id="searchitemdiv2">
+        <label for="itembr4"></label>
+        <input id="itembr4" readonly="readonly" #itemv1 (click)="getItemValue1(itemv1.value)" class="input-style"
+               *ngFor="let it of mainarray" value="{{it.name}}">
+    </div>
+</div>

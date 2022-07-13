@@ -1,0 +1,22 @@
+<div class="container">
+    <h4 id="hottitle" style="text-align: center;">Hot Deals</h4>
+</div>
+<div class="sly">
+    <ngx-slick-carousel class="carousel"
+                        #slickModal="slick-carousel"
+                        [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let item of deals" class="slide" hide-delay="100" show-delay="100"
+             tooltip="Discount {{item.discount}} %" placement="top">
+            <div (click)="goProductView(item)" style="text-align: center;">
+                <img src="{{ item.image }}" class="image-size img-fluid">
+                <div *ngIf="item.discount !== 0" class="price-text">$ {{item.price - (item.price / item.discount) |
+                    number:'1.2-2'}}
+                </div>
+                <div *ngIf="item.discount === 0" class="price-text">$ {{item.price | number:'1.2-2'}}
+                </div>
+                <div class="real-price">$ {{item.price}}</div>
+                <div class="name-text">{{item.name}}</div>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+</div>

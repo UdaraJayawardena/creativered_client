@@ -1,0 +1,51 @@
+<ngx-spinner
+        size="large"
+        color="#d60d39"
+        type="ball-atom">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<head>
+    <title>Wish List</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+
+<div class="container allWishlist not-yet-three" *ngIf="!isNoItem">
+    <div class="title">
+        <h4 style="text-align: center">wish list</h4>
+    </div>
+
+    <div class="setThe" *ngFor="let item of items" style="padding: 10px;">
+        <div class="row borderSet">
+            <div>
+                <ngb-alert *ngIf="successMessage" type="danger" (close)="successMessage = null">{{ successMessage }}
+                </ngb-alert>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3">
+                <img src="{{item.image}}" alt="wishImage" width="150" height="150">
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 setPadding">
+                <h6>{{item.brand}}{{item.name}}</h6>
+                <h6 style="color: #d60d39; font-weight: bold">{{item.price}}</h6>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 setPadding">
+                Qty :
+                <input #qtyInput type="number" max="{{item.qtyOnHand}}" min="1" class="numberCombo" title="wishQty"
+                       value="1" placeholder="1"><br>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 setPadding">
+                <button type="button" class="btn-group-lgg" (click)="moveToCart(qtyInput.value,item.id)">move to cart
+                </button>
+                <button type="button" class="deleteBtn" (click)="removeItem(item)"><img src={{deleteBtn}}
+                                                                                        class="resolution">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isNoItem" class="not-yet-three">
+    <img src="../../../assets/empty-cart.png" class="not-yet-image-three">
+    <h4 class="not-yet-text-three">no wished item yet</h4>
+    <h6 class="not-yet-sub-text-three">go back and add items to wish list ...!</h6>
+</div>

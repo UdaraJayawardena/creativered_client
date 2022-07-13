@@ -1,0 +1,43 @@
+<div class="container">
+    <ngb-tabset>
+        <ngb-tab title="overview">
+            <ng-template ngbTabContent>
+                <div class="detail-tab" [innerHTML]="item.overview">
+                    <div *ngIf="(item.overview === 'not yet')" class="not-yet"><h4 class="not-yet-text">no overview
+                        yet</h4>
+                    </div>
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="specification">
+            <ng-template ngbTabContent>
+                <div class="detail-tab" [innerHTML]="item.specification">
+                    <div *ngIf="(item.specification === 'not yet')" class="not-yet"><h4 class="not-yet-text">no
+                        specification
+                        yet</h4></div>
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="review">
+            <ng-template ngbTabContent>
+                <div class="detail-tab">
+                    <div class="feedback-main row" *ngFor="let oneFeedBack of rateList">
+                        <div class="user-name col-12">{{oneFeedBack.customerName}}</div>
+                        <div class="rate-star col-12">
+                            <ngb-rating [rate]="oneFeedBack.numberOfStars" style="color: #d60d39"
+                                        readonly="true"></ngb-rating>
+                        </div>
+                        <div class="feedback-message col-12">{{oneFeedBack.feedBack}}</div>
+                        <div class="bottom-line"></div>
+                    </div>
+                    <div *ngIf="rateList.length === 0" class="not-yet">
+                        <img src="../../../assets/error_one.jpg" style="height: 300px; padding-top: 100px;">
+                        <h4 style="color: #d60d39;">no review yet</h4>
+                        <h6 style="color: #3a3939; margin-bottom: 75px;">you can also give a rate after buying
+                            product</h6>
+                    </div>
+                </div>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</div>

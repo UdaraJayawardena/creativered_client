@@ -1,0 +1,31 @@
+.fullAboutUs {
+    font-family: Poppins, serif;
+}
+
+.centering2 {
+    text-align: center;
+    margin-top: 90px;
+}
+
+.centering {
+    text-align: center;
+}
+
+.liner {
+    width: 80%;
+    height: 3px;
+    background-color: #d60d39;
+    margin-bottom: 10px;
+    margin-left: 10%;
+}
+
+.details {
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.details2 {
+    margin-top: 50px;
+    text-align: center;
+}

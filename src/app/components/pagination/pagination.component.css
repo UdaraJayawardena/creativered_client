@@ -1,0 +1,85 @@
+#hottitle {
+    font-size: 1.5em;
+}
+
+@media only screen and ( max-width: 320px) {
+    #hottitle {
+        font-size: 1em;
+    }
+}
+
+@media only screen and ( max-width: 768px) {
+    #hottitle {
+        font-size: 1.2em;
+    }
+}
+
+.sly {
+    padding: 40px;
+    width: 100%
+}
+
+.image-size {
+    width: 225px;
+    height: 225px;
+    cursor: pointer;
+    margin-left: 15%;
+}
+
+.name-text {
+    font-family: Poppins, serif;
+    font-size: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.price-text {
+    font-family: Poppins, serif;
+    font-size: 25px;
+    color: #d60d39;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.real-price {
+    font-family: Poppins, serif;
+    font-size: 15px;
+    text-decoration: line-through;
+    color: #d60d39;
+    font-weight: bold;
+    text-align: center;
+}
+
+.similar-item {
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .image-size {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .image-size {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name-text {
+        font-size: 10px;
+    }
+
+    .price-text {
+        font-size: 15px;
+    }
+
+    .similar-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

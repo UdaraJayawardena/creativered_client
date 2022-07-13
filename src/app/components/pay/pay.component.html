@@ -1,0 +1,144 @@
+<ngx-spinner
+        size="large"
+        color="#d60d39"
+        type="ball-atom">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+<div style="margin-top: 10px; margin-bottom: 10px" class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12" *ngIf="haveShippingAddress">
+            <h6 style="margin-bottom: 10px; font-family: Poppins, serif; font-weight: bold">saved shipping address</h6>
+            <div style="font-size: 13px; margin-bottom: 20px; color: #d60d39;">select address bellow or enter new
+                address
+            </div>
+            <table class="table table-striped table-responsive shipping-table tableWidth"
+                   style="max-height: 300px;">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">first name</th>
+                    <th scope="col">last name</th>
+                    <th scope="col">address line 1</th>
+                    <th scope="col">address line 2</th>
+                    <th scope="col">city</th>
+                    <th scope="col">country</th>
+                    <th scope="col">postal code</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let address of oldShippingAddress; index as i"
+                    (click)="getSelectedColumnDetail(address)"
+                    style="cursor: pointer">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{address.firstName}}</td>
+                    <td>{{address.lastName}}</td>
+                    <td>{{address.addressOne}}</td>
+                    <td>{{address.addressTwo}}</td>
+                    <td>{{address.city}}</td>
+                    <td>{{address.country}}</td>
+                    <td>{{address.postalCode}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xl-12 col-lg-12 shipping-inputs" id="shippingAddressForm">
+            <div class="row input-fields">
+                <div class="col-xl-12 setTheMarginBottom">
+                    <label style="font-weight: bold">Shipping Details</label>
+                    <div id="datediv" style="display: flex">
+                        <h6>Estimate Date:</h6><h6 style="color: #d60d39">{{lcdate}}</h6><h6>to</h6><h6
+                            style="color: #d60d39">{{newdate}}</h6>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <label style="font-weight: bold;margin-bottom: 10px">Ships To</label>
+                    <form class="frmdata">
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="sFirstName">First name</label>
+                                <input #sfName name="sFirstName" type="text" placeholder="enter first name"
+                                       class="form-control shipping-detail-input" id="sFirstName"
+                                       value="{{shippingFirstNameValue}}" required
+                                       (click)="firstNameClick()">
+                                <small *ngIf="shippingFirstName" style="color: #d60d39">invalid name</small>
+                                <small *ngIf="shippingFirstNameInput" style="color: #d60d39">enter first name</small>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="sLastaName">Last name</label>
+                                <input #slName name="sLastaName" type="text" class="form-control shipping-detail-input"
+                                       id="sLastaName" required placeholder="enter last name" (click)="lastNameClick()"
+                                       value="{{shippingLastNameValue}}">
+                                <small *ngIf="shippingLastName" style="color: #d60d39">invalid name</small>
+                                <small *ngIf="shippingLastNameInput" style="color: #d60d39">enter last name</small>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="sAddressLineOne">Address line 1</label>
+                                <input #sAddressOne name="sAddressLineOne" placeholder="enter address line 1"
+                                       type="text" value="{{shippingAddressOneValue}}" (click)="addressLineOneClick()"
+                                       class="form-control shipping-detail-input" id="sAddressLineOne" required>
+                                <small *ngIf="shippingAddressOne" style="color: #d60d39">invalid address</small>
+                                <small *ngIf="shippingAddressOneInput" style="color: #d60d39">enter address line 1
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="sAddressLineTwo">Address Line 2</label>
+                                <input #sAddressTwo name="sAddressLineTwo" type="text" id="sAddressLineTwo" required
+                                       class="form-control shipping-detail-input" placeholder="enter address line 2"
+                                       value="{{shippingAddressTwoValue}}" (click)="addressLineTwoClick()">
+                                <small *ngIf="shippingAddressTwo" style="color: #d60d39">invalid address</small>
+                                <small *ngIf="shippingAddressTwoInput" style="color: #d60d39">enter address line 2
+                                </small>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="sCity">City</label>
+                                <input #sCity name="sCity" type="text" class="form-control shipping-detail-input"
+                                       id="sCity" required placeholder="enter city" value="{{shippingCityValue}}"
+                                       (click)="cityClick()">
+                                <small *ngIf="shippingCity" style="color: #d60d39">invalid city</small>
+                                <small *ngIf="shippingCityInput" style="color: #d60d39">enter shipping city</small>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="countryType">Country</label>
+                                <select class="custom-select country-combo-shipping" id="countryType" #sCountryType
+                                        (click)="countryClick()"
+                                        style="font-size: 15px;">
+                                    <option selected>{{shippingCountryValue}}</option>
+                                    <option *ngFor="let country of allCounties">{{country.Country}}</option>
+                                </select>
+                                <small *ngIf="shippingCountryInput" style="color: #d60d39">select country</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="sPostalCode">Postal code</label>
+                                <input #sPostalCode name="sPostalCode" type="text" id="sPostalCode" required
+                                       class="form-control shipping-detail-input" value="{{shippingPostalCodeValue}}"
+                                       placeholder="enter postal code" (click)="postalCodeClick()">
+                                <small *ngIf="shippingPostalCode" style="color: #d60d39">invalid postal code</small>
+                                <small *ngIf="shippingPostalCodeInput" style="color: #d60d39">enter postal code</small>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="col-md-10 mb-2"></div>
+                            <div class="col-md-2 mb-2" style="text-align: right">
+                                <button style="font-size: 15px; width: 100px;" class="btn nextBtn"
+                                        (click)="goBillingDetailsPage(sfName.value,slName.value,sAddressOne.value,
+                                        sAddressTwo.value,sCity.value,sCountryType.value,sPostalCode.value)">
+                                    next
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

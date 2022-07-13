@@ -1,0 +1,78 @@
+<div class="modal-header">
+    <button #closeModal type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body" style="">
+    <div class="main-sign-in">
+        <div>
+            <h2 class="topic">Sign up</h2>
+        </div>
+        <form #signUp="ngForm">
+
+            <div>
+                <input #userName name="userName" type="text" placeholder="enter username" style="text-align: center;"
+                       class="form-control sign-up-input" id="userName"
+                       value="{{userNameValue}}" required
+                       (click)="userNameClick()">
+                <div style="width: 100%; text-align: center">
+                    <small *ngIf="wrongUserName" style="color: #d60d39;">invalid username</small>
+                    <small *ngIf="userNameInput" style="color: #d60d39;">enter username</small>
+                </div>
+            </div>
+            <div>
+                <input #email name="email" type="text" placeholder="enter email" style="text-align: center;"
+                       class="form-control sign-up-input" id="email"
+                       value="{{emailValue}}" required
+                       (click)="emailClick()">
+                <div style="width: 100%; text-align: center">
+                    <small *ngIf="wrongEmail" style="color: #d60d39;">invalid email</small>
+                    <small *ngIf="emailInput" style="color: #d60d39;">enter email</small>
+                </div>
+            </div>
+            <div style="width: 85%">
+                <input #password name="password" type="password" placeholder="enter password"
+                       style="text-align: center; display: inline-block;" class="form-control sign-up-input-a"
+                       id="password"
+                       value="{{passwordValue}}" required
+                       (click)="passwordClick()">
+                <img (click)="password.type=password.type=='password'?
+        'text':'password'" src="../../assets/show_hide_password-07-512.png"
+                     style="height: 25px;width: 25px;cursor: pointer; margin-top: -70px; margin-left: 105%;">
+                <div style="width: 100%; text-align: center; margin-top: -22px; margin-left: 10%; margin-bottom: 40px;">
+                    <small *ngIf="wrongPassword" style="color: #d60d39;">invalid password</small>
+                    <small *ngIf="passwordInput" style="color: #d60d39;">enter password</small>
+                </div>
+            </div>
+            <div style="width: 85%; margin-top: -40px;">
+                <input #confirmPassword name="confirmPassword" type="password" placeholder="enter confirm password"
+                       style="text-align: center;" class="form-control sign-up-input-a" id="confirmPassword"
+                       value="{{confirmPasswordValue}}" required
+                       (click)="confirmPasswrodClick()">
+                <img (click)="confirmPassword.type=confirmPassword.type=='password'?
+        'text':'password'" src="../../assets/show_hide_password-07-512.png"
+                     style="height: 25px;width: 25px;cursor: pointer; margin-top: -70px; margin-left: 105%;">
+                <div style="width: 100%; text-align: center; margin-top: -22px; margin-left: 10%; margin-bottom: 40px;">
+                    <small *ngIf="wrongConfirmPassword" style="color: #d60d39;">invalid confirm password</small>
+                    <small *ngIf="confirmPasswordinput" style="color: #d60d39;">enter confirm password</small>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 15px;" #updates>
+                <input type="checkbox" (click)="subscribeUpdate($event)" checked>
+                check updates via email
+            </div>
+            <div>
+                <input
+                        (click)="saveCustomer(userName.value,email.value,password.value,confirmPassword.value)"
+                        type="button"
+                        value="sign up" class="btn sign-in-btn">
+            </div>
+
+        </form>
+
+        <div class="signup1">
+            <a href="" data-toggle="modal" data-dismiss="modal" data-target="#signInModal">already have you an account
+                ?</a>
+        </div>
+    </div>
+</div>

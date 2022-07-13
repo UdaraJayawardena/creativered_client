@@ -1,0 +1,16 @@
+<div id="main">
+    <ngx-spinner
+            size="large"
+            color="#d60d39"
+            type="ball-atom">
+        <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <h4 class="product-name">{{product_name}}</h4>
+    <div class="container-fluid row" style="text-align: center; margin-bottom: 20px; margin-top: 20px">
+        <app-image-view class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="padding: 2%"></app-image-view>
+        <app-product-detail class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="padding: 2%"></app-product-detail>
+        <app-button-set class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="padding: 2%"></app-button-set>
+    </div>
+    <app-simmiler-item></app-simmiler-item>
+    <app-specs style="margin-bottom: 20px!important;"></app-specs>
+</div>

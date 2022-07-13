@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="logo">
+        <img class="logo-img" src="../../../assets/CreativeRedLogo.png" alt="logo">
+    </div>
+    <div class="invoice-title">
+        <u>Final Details For Order - {{order.id}}</u> <br>
+        <span class="invoice-title-sub">print this page for your records</span>
+    </div>
+    <div class="main-order-details">
+        Order Placed : <span
+            class="important-values">{{order.orderDate | date}} {{order.orderTime}}</span><br>
+        Order total : <span class="important-values">{{orderTotal | currency: "USD"}}</span>
+    </div>
+    <hr>
+    <div class="orderd-item-details">
+        <u>Ordered item list</u>
+    </div>
+    <div class="row ordered-items">
+        <div class="col-6 ordered-item-title-left"><span>Items ordered</span></div>
+        <div class="col-2 ordered-item-title-center">Qty</div>
+        <div class="col-4 ordered-item-title-right"><span>Price</span></div>
+    </div>
+    <div class="row" *ngFor="let detail of items">
+        <div class="col-6 ordered-item-content-left">{{detail.brand}} - {{detail.model}}</div>
+        <div class="col-2 ordered-item-content-center">{{detail.qty}}</div>
+        <div class="col-4 ordered-item-content-right">{{detail.price | currency: "USD"}}</div>
+    </div>
+    <hr>
+    <div class="payment-details">
+        <u>Payment details</u>
+        <div class="payment-method-title">payment type : <span class="important-values">{{order.paymentMethod}}
+            <br> </span>
+        </div>
+        <div class="row">
+            <div class="payment-address col-6">
+                payment address : <br><span class="important-values"
+                                            style="text-align: left">{{billingAddress.firstName}}
+                {{billingAddress.lastName}} <br> {{billingAddress.addressOne}} <br> {{billingAddress.addressTwo}} <br>
+                {{billingAddress.city}} <br> {{billingAddress.country}} <br> {{billingAddress.postalCode}} </span>
+            </div>
+            <div class="shipping-address col-6">
+                shipping address : <br><span class="important-values"
+                                             style="text-align: left">{{shippingAddress.firstName}}
+                {{shippingAddress.lastName}} <br> {{shippingAddress.addressOne}} <br> {{shippingAddress.addressTwo}}
+                <br>
+                {{shippingAddress.city}} <br> {{shippingAddress.country}} <br> {{shippingAddress.postalCode}} </span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="grand-total">
+        Grand total : {{orderTotal | currency: "USD"}}
+    </div>
+    <hr>
+    <div class="site-detail">
+        <span style="font-weight: bold">Please note : </span><span>this is not a VAT invoice. <br> </span>
+        <span style="font-weight: bold">creative<span style="color: #d60d39">red</span><br> PRODUCTI<span
+                style="color: #d60d39">O</span>N(PVT)LTD</span>
+    </div>
+</div>

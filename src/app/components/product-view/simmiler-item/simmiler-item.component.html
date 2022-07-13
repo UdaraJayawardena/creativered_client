@@ -1,0 +1,20 @@
+<div *ngIf="!noSimilarItem">
+    <hr>
+    <div style="margin: 40px; text-align: center; color: #d60d39;">
+        <h5>similar items</h5>
+    </div>
+    <div class="similar-item">
+        <ngx-slick-carousel class="carousel"
+                            #slickModal="slick-carousel"
+                            [config]="slideConfig">
+            <div *ngFor="let item of items; index as i;" ngxSlickItem class="slide" (click)="getItemDetail(item)"
+                 ngbTooltip="Discount : {{item.discount}}%">
+                <img src="{{ item.image }}" class="image-size" alt="product-image">
+                <div class="name-text">{{item.brand}} {{item.name}}</div>
+                <div class="price-text">$ {{item.price}}</div>
+
+            </div>
+        </ngx-slick-carousel>
+        <hr>
+    </div>
+</div>

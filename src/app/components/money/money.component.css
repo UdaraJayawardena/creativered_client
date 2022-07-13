@@ -1,0 +1,261 @@
+.allFont {
+    font-family: Poppins, serif;
+    margin-bottom: 20px;
+    margin-top: 4%;
+}
+
+.jumbotron {
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.shipsToText {
+    margin-left: 370px;
+    font-size: 15px;
+    position: absolute;
+    line-height: 40px;
+    background-color: #F2F2F2;
+    width: 350px;
+    border-radius: 20px;
+}
+
+.billing {
+    height: 90%;
+    width: 90%;
+    margin-top: 3.5%;
+    border-color: transparent;
+    text-align: left;
+    line-height: 25px;
+    outline: transparent;
+}
+
+.totalBoxx {
+    height: 310px;
+    width: 200px;
+    background-color: #F2F2F2;
+    margin-top: 5%;
+    margin-left: 750px;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 25px;
+    margin-bottom: 6%;
+    text-align: center;
+    padding-top: 80px;
+    border-radius: 20px;
+}
+
+.totalBox0 {
+    height: 300px;
+    width: 200px;
+    background-color: #F2F2F2;
+}
+
+.line {
+    width: 170px;
+    height: 5px;
+    background-color: #d60d39;
+    margin-bottom: 25px;
+}
+
+.orderText {
+    font-weight: bolder;
+}
+
+.btn-group-lgs {
+    background-color: #d60d39;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.inputSetss {
+    margin-top: 12px;
+    width: 120px;
+    border-color: transparent;
+    border-bottom-width: thin;
+    outline: transparent;
+}
+
+.inputSetBill {
+    width: 94%;
+    border-color: transparent;
+    border-bottom-width: thin;
+    outline: transparent;
+    line-height: 10px;
+    border-radius: 30px;
+    margin-left: 10px;
+}
+
+@media (max-width: 700px) {
+    .shipsToText {
+        margin-top: 50px;
+        margin-left: 50px;
+        font-size: 15px;
+        font-weight: bolder;
+        position: relative;
+        line-height: 40px;
+        border-radius: 20px;
+    }
+
+    .address {
+        background-color: #F2F2F2;
+        width: 310px;
+        height: 250px;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    .totalBoxx {
+        height: 300px;
+        width: 210px;
+        background-color: #F2F2F2;
+        margin-top: 50px;
+        margin-left: 100px;
+        position: relative;
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 200px;
+    }
+
+    .line {
+        margin-top: 25px;
+        width: 178px;
+        height: 5px;
+        background-color: #d60d39;
+        margin-bottom: 25px;
+    }
+
+    .orderText {
+        font-weight: bolder;
+    }
+
+    .btn-group-lgs {
+        background-color: #d60d39;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        width: 120px;
+        height: 40px;
+        margin-top: 20px;
+    }
+
+    .inputSetss {
+        margin-top: 12px;
+        border-color: transparent;
+        border-bottom-width: thin;
+        width: 120px;
+    }
+
+}
+
+.billing-input {
+    border-radius: 10px;
+    height: 35px;
+    outline: none;
+}
+
+.confirm-pay-btn {
+    margin-top: 10px;
+    border-radius: 20px;
+    outline: none;
+    background-color: #d60d39;
+    border: none;
+    margin-bottom: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.confirm-pay-btn:hover {
+    background-color: #3a3939;
+}
+
+.tableColumns {
+    text-align: center;
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+.country-combo-billing {
+    outline: none;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .tableWidth {
+        display: inline-table;
+    }
+}
+
+.billing-detail-input {
+    border-radius: 10px;
+    outline: none;
+}
+
+.nextBtn {
+    background-color: #d60d39;
+    color: white;
+    border-radius: 20px;
+    font-family: Poppins, serif;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.my-style {
+    text-align: right;
+}
+
+.billing-inputs {
+    background-color: #F2F2F2;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.paragraph-style {
+    color: white;
+}
+
+.container-style {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container-style-one {
+    margin-bottom: 10px;
+    font-family: Poppins, serif;
+    font-weight: bold;
+}
+
+.container-style-two {
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #d60d39;
+}
+
+.cursor-style {
+    cursor: pointer;
+}
+
+.first-name-style {
+    min-height: 50px;
+}
+
+.billing-address {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.invalid-style {
+    color: #d60d39;
+}
