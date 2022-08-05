@@ -209,7 +209,7 @@ export class StripePaypalComponent implements OnInit {
 
     paypalPayment() {
         this.paymentType = 'paypal';
-        this.http.post('http://localhost:3000/buy', {amount: this.tot}).subscribe((result) => {
+        this.http.post('http://ec2-3-111-113-150.ap-south-1.compute.amazonaws.com:3000/buy', {amount: this.tot}).subscribe((result) => {
             const x = JSON.stringify(result);
             this.getPaymentId(JSON.parse(x).url);
         });
