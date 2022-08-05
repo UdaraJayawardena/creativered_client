@@ -331,3 +331,6 @@ ASALocalRun/
 
 key.json
 /key.json
+
+# Compile output
+/dist
