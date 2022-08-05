@@ -90,6 +90,9 @@ export class SignInComponent implements OnInit {
                         localStorage.setItem('userId', result.userId.toString());
                         this.checkVerify(result.userId);
                     }, (error => {
+                        console.log("==================== customer login ====================");
+                        console.log('error =>',error);
+                        
                         Swal.fire(
                             'Warning !',
                             'Failed to Login !',
