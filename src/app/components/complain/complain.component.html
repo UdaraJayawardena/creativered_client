@@ -1,0 +1,14 @@
+<div class="container complain">
+    <div class="complaint">complaint</div>
+    <div class="complain-type-combo">
+        <div class="form-group">
+            <select class="custom-select" #complainType>
+                <option selected>Select complaint type</option>
+                <option *ngFor="let complain of complainTypes">{{complain.complainType}}</option>
+            </select>
+        </div>
+    </div>
+    <textarea placeholder="Enter your complain" class="message" #message></textarea>
+    <button class="btn submit-btn" (click)="saveComplain(message.value ,complainType.value)">submit
+    </button>
+</div>

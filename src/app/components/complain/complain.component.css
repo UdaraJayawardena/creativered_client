@@ -1,0 +1,33 @@
+.complain {
+    text-align: center;
+}
+
+.complaint {
+    font-family: Poppins, serif;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.complain-type-combo {
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+}
+
+.message {
+    width: 90%;
+    height: 200px;
+    border-radius: 20px;
+    outline: none;
+    padding: 10px 10px;
+}
+
+.submit-btn {
+    width: 100px;
+    background-color: #d60d39;
+    color: white;
+    font-family: Poppins, serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}

@@ -1,0 +1,73 @@
+<div *ngIf="!haveCartItem" class="not-yet-two">
+    <img src="../../../assets/empty-cart.png" class="not-yet-image-two" alt="icon">
+    <h4 class="not-yet-text-two">cart is empty</h4>
+    <h6 class="not-yet-sub-text-two">go back and add item to cart ...!</h6>
+</div>
+<div *ngIf="haveCartItem" class="not-yet-two">
+    <head>
+        <title>Cart</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    </head>
+
+    <div class="container">
+        <div class="setTitle">
+            <h4>my shopping cart</h4>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped" style="text-align: center;font-size: 15px">
+                <thead>
+                <tr>
+                    <th scope="col">view</th>
+                    <th scope="col">product</th>
+                    <th scope="col">price</th>
+                    <th scope="col">in stock qty</th>
+                    <th scope="col">qty</th>
+                    <th scope="col">remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let iit of cartItem">
+                    <td><img width="100" height="100" class="img-fluid" src="{{iit.image}}" alt="cart item"></td>
+                    <td>{{iit.name}}</td>
+                    <td>{{iit.price}}</td>
+                    <td>{{iit.qtyOnHand}}</td>
+                    <td>
+                        <label>
+                            <input #chqty min="1" max="{{iit.qtyOnHand}}" type="number" value="{{iit.cartQty}}"
+                                   (input)="checkChange(iit.id,chqty.value)"
+                                   style="width: 45px">
+                        </label>
+                    </td>
+                    <td><img (click)="removeItem(iit.id)" style="margin-top: 4px;cursor: pointer" class="remove"
+                             src="../../../assets/Trashh_48px.png" alt="remove-icon">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div style="text-align: right; margin-bottom: 10px" class="container">
+        <button (click)="makeOrderDetail()" type="button" class="btn check-out">Check Out</button>
+    </div>
+
+    <ng-template #signIn let-c="close" let-d="dismiss">
+        <div class="modal-body">
+            <button type="button" class="close close-btn" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <app-sign-in></app-sign-in>
+        </div>
+    </ng-template>
+</div>
+
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 20px">
+        </div>
+    </div>
+</div>
+
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#signInModal">Open Modal</button>

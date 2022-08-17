@@ -1,0 +1,42 @@
+.name-input {
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 15px;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.email-input {
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 15px;
+    background-color: white;
+}
+
+.message-input {
+    width: 250px;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: white;
+    height: 200px
+}
+
+.send-btn {
+    width: 150px;
+    background-color: #C00C33;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.send-btn:hover {
+    background-color: #3a3939;
+}
+
+.errorMessage {
+    color: #C00C33;
+}

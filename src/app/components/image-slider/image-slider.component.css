@@ -1,0 +1,37 @@
+.image-slider {
+    position: relative;
+}
+
+.text-on-slider {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-family: Poppins, serif;
+    color: white;
+}
+
+.text-on-slide-show {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    font-size: 40px;
+    font-family: Poppins, serif;
+}
+
+.sub-text {
+    font-family: Poppins, serif;
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: -1px 0 rgba(129, 124, 124, 0.41), 0 1px #817c7c, 1px 0 #817c7c, 0 -1px #817c7c;
+}
+
+@media only screen and (max-width: 600px) {
+    .text-on-slide-show {
+        font-size: 20px;
+    }
+
+    .sub-text {
+        font-size: 15px;
+    }
+}
+

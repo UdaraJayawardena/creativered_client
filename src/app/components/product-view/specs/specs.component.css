@@ -1,0 +1,41 @@
+.detail-tab {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    min-height: 400px;
+}
+
+.feedback-main {
+    font-family: Poppins, serif;
+    font-size: 14px;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.rate-star {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.feedback-message {
+}
+
+.not-yet {
+    width: 100%;
+    text-align: center;
+}
+
+.not-yet-text {
+    color: #d60d39;
+    padding: 225px 0;
+}
+
+.bottom-line {
+    height: 1px;
+    width: 100%;
+    background-color: lightslategray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

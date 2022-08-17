@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.nav-tabs .nav-link {
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.ng5-slider .ng5-slider-pointer::after {
+    top: 9px !important;
+    left: 9px !important;
+}
+
+.ng5-slider .ng5-slider-pointer {
+    width: 25px !important;
+    height: 25px !important;
+    top: -11px !important;
+}
+
+.ng5-slider .ng5-slider-selection {
+    background: darkgray !important;
+}
+
+.ng5-slider .ng5-slider-pointer {
+    background-color: white !important;
+}
+
+.ng5-slider .ng5-slider-pointer::after {
+    background: #D60D39 !important;
+}
+
+.ng5-slider .ng5-slider-bubble {
+    color: white !important;
+    font-family: Poppins, serif;
+    font-size: 12px !important;
+}
+
+.swal2-popup {
+    font-family: Poppins, serif !important;
+    width: 20em !important;
+    font-weight: lighter !important;
+    border-radius: 2.135em !important;
+}
+
+.swal2-popup .swal2-styled.swal2-confirm {
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
+
+.swal2-popup .swal2-styled.swal2-cancel {
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
+
+.swal2-popup .swal2-content {
+    font-size: 1.500em !important;
+}
+
+.swal2-popup .swal2-title {
+    font-size: 2.875em !important;
+    font-family: Poppins, serif !important;
+}
+
+.swal2-popup .swal2-styled {
+    border-radius: 1.25em !important;
+    background-color: #d60d39 !important;
+}
+
+.swal2-popup .swal2-header {
+    font-size: 6px !important;
+}
+
+.swal2-popup #swal2-content {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 14px;
+}
+
+.ngx-pagination .current {
+    background-color: #d60d39 !important;
+}
+
+.fa-arrow-circle-right:before {
+    color: #d60d39 !important;
+}
+
+.fa-arrow-circle-left:before {
+    color: #d60d39 !important;
+}
+
+@media only screen and (max-width: 425px) and (min-width: 375px) {
+
+    .applyButton {
+        width: 50px !important;
+        height: 25px !important;
+        margin-top: 18px !important;
+        font-size: 12px !important;
+    }
+
+    .pricepp {
+        right: 75px !important;
+        width: 150px !important;
+    }
+
+    .search-pane {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    .search-pane {
+        width: 95% !important;
+    }
+}
+
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.card-img-top {
+    /*width: 90% !important;*/
+    width: 250px;
+    height: 250px;
+    margin-top: 10px !important;
+}
+
+.table-responsive {
+    min-width: 100% !important;
+}
+
+.slick-next:before {
+    color: #d60d39 !important;
+}
+
+.slick-prev:before {
+    color: #d60d39 !important;
+}
+

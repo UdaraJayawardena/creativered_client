@@ -1,0 +1,39 @@
+<head>
+    <title>Reset Password</title>
+</head>
+
+<button id="openModal" #openModal [hidden]="true"
+        data-toggle="modal" data-target="#resetModel"></button>
+
+<div class="modal fade" id="resetModel" tabindex="-1" role="dialog" aria-labelledby="forgetModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-one">
+            <div class="modal-header">
+                <button #closeModal type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="main-forget-password">
+                    <div>
+                        <h2 class="topic">Reset password</h2>
+                    </div>
+                    <div>
+                        <input #one type="password" placeholder="enter new-password" class="email-text">
+                    </div>
+                    <div>
+                        <input #two type="password" placeholder="re-enter password" class="email-text">
+                    </div>
+
+                    <div>
+                        <input (click)="resetPassword(one.value,two.value)" type="button" value="Reset password"
+                               class="btn forget-password-btn">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

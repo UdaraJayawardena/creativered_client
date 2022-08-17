@@ -1,0 +1,47 @@
+.image-size {
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+    margin-left: 25%;
+}
+
+.name-text {
+    font-family: Poppins, serif;
+    font-size: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.price-text {
+    font-family: Poppins, serif;
+    font-size: 15px;
+    color: #d60d39;
+    font-weight: bold;
+    text-align: center;
+}
+
+.similar-item {
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
+@media only screen and (max-width: 768px) {
+    .image-size {
+        width: 80%;
+        height: 80%;
+    }
+
+    .name-text {
+        font-size: 12px;
+    }
+
+    .price-text {
+        font-size: 12px;
+    }
+
+    .similar-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

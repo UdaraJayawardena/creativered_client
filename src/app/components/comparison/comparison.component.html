@@ -1,0 +1,135 @@
+<ngx-spinner
+        size="large"
+        color="#d60d39"
+        type="ball-atom">
+    <p class="loading-text"> Loading... </p>
+</ngx-spinner>
+<head>
+    <title>Comparison</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+
+<div (click)="maindivv()" class="fontFor row">
+
+    <div class="fullBox1 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+        <nav class="navbar" id="nav-three">
+            <div id="search-bar">
+                <input #searchvalue (keyup)="searchkeyup(searchvalue.value)" type="text"
+                       id="search-text"
+                       placeholder="search here....">
+                <img class="search-icon" src="../../../assets/Search_50px_1.png">
+                <div id="searchitemdiv">
+                    <input id="itembr" readonly="readonly" class="search-div"
+                           #itemv (click)="getItemValue(itemv.value); searchvalue.value=null"
+                           *ngFor="let it of itemarray" value="{{it.name}}">
+                </div>
+            </div>
+        </nav>
+
+        <div *ngIf="!isSelect" class="search-one">
+            <div class="search-two">
+                <img class="search-three" src="../../../assets/error_one.jpg" alt="">
+                <h4 class="search-four">search item</h4>
+                <h6 class="search-five">use top search bar to search item</h6>
+            </div>
+        </div>
+        <div *ngIf="isSelect" class="compare-one">
+            <div class="col-xl-12 compare-two">
+                <img class="img-fluid compare-three" src="{{compare_image_1}}" alt="">
+            </div>
+            <div class="row compare-four">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Name</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-12 centerOn">
+                    <h6 class="fontSizes">{{name}}</h6>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Brand</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-12 centerOn">
+                    <h6 class="fontSizes">{{brand}}</h6>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Price</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-12 centerOn">
+                    <h6 class="fontSizes">{{price | currency: 'USD'}}</h6>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Highlight</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-12 centerOn">
+                    <h6 class="fontSizes" [innerHTML]="hilights"></h6>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Specification</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-12 centerOn">
+                    <h6 class="fontSizes" [innerHTML]="specification"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fullBox2 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+        <nav class="navbar" id="nav-three2">
+            <div id="search-bar2">
+                <input #searchvalue1 (keyup)="searchkeyup2(searchvalue1.value)" type="text"
+                       id="search-text2"
+                       placeholder="search here....">
+                <img class="search-icon" src="../../../assets/Search_50px_1.png">
+                <div id="searchitemdiv1">
+                    <input id="itembr1" readonly="readonly" class="abc"
+                           #itemv1 (click)="getItemValue1(itemv1.value); searchvalue1.value=null"
+                           *ngFor="let it of itemarray" value="{{it.name}}">
+                </div>
+            </div>
+        </nav>
+
+        <div *ngIf="!isSelect_2" class="item-one">
+            <div class="item-two">
+                <img class="item-three" src="../../../assets/error_one.jpg" alt="">
+                <h4 class="item-four">search item</h4>
+                <h6 class="item-five">use top search bar to search item</h6>
+            </div>
+        </div>
+        <div *ngIf="isSelect_2" class="item-six">
+            <div class="col-xl-12 item-seven">
+                <img class="img-fluid item-eight" src="{{compare_image_2}}" alt="">
+            </div>
+            <div class="row item-nine">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Name</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 centerOn">
+                    <h6 class="fontSizes">{{name_2}}</h6>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Brand</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 centerOn">
+                    <h6 class="fontSizes">{{brand_2}}</h6>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Price</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 centerOn">
+                    <h6 class="fontSizes">{{price_2 | currency: 'USD'}}</h6>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">Highlights</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 centerOn">
+                    <h6 class="fontSizes" [innerHTML]="hilights_2"></h6>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 centerOn">
+                    <h6 class="fontSizes compare-five">specification</h6>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 centerOn">
+                    <h6 class="fontSizes" [innerHTML]="specification_2"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

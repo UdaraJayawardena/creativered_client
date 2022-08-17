@@ -1,0 +1,165 @@
+.allWishlist {
+    font-family: Poppins, serif;
+    margin-bottom: 20px;
+}
+
+.borderSet {
+    border: solid 3px #d60d39;
+    text-align: center;
+}
+
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.setPadding {
+    padding-top: 35px;
+}
+
+.title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.oneItem {
+    margin-left: 20%;
+    border: solid 3px #d60d39;
+    width: 820px;
+    height: 230px;
+    margin-bottom: 5%;
+}
+
+.wishImage {
+    text-align: center;
+}
+
+.wishImageDiv {
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.imageDetails {
+    margin-left: 220px;
+    margin-top: 3%;
+    width: 250px;
+
+    height: 110px;
+    position: absolute;
+    font-size: 15px;
+}
+
+.price {
+    font-weight: bold;
+    color: red;
+}
+
+.qty {
+    position: absolute;
+    margin-left: 490px;
+    margin-top: 3%;
+    font-size: 15px;
+}
+
+.numberCombo {
+    width: 50px;
+}
+
+.btn-group-lgg {
+    background-color: #d60d39;
+    border: none;
+    border-radius: 200px;
+    color: white;
+    text-align: center;
+    width: 110px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.bin {
+    margin-top: 12%;
+    margin-left: 684px;
+    background-color: transparent;
+}
+
+.deleteBtn {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+@media (max-width: 700px) {
+    .oneItem {
+        margin-left: 20px;
+        width: 320px;
+        height: 300px;
+        margin-bottom: 40px;
+    }
+
+    .wishImage {
+        text-align: center;
+    }
+
+    .wishImageDiv {
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .imageDetails {
+        margin-left: 160px;
+        margin-top: 40px;
+        width: 153px;
+        height: 110px;
+        position: relative;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .price {
+        font-weight: bold;
+        color: red;
+    }
+
+    .qty {
+        position: absolute;
+        margin-left: 4%;
+        font-size: 15px;
+        margin-top: 40px;
+    }
+
+    .numberCombo {
+        width: 60px;
+    }
+
+    .bin {
+        margin-top: 28px;
+        margin-left: 263px;
+        background-color: transparent;
+        position: absolute;
+    }
+}
+
+.not-yet-three {
+    text-align: center;
+    min-height: 400px;
+}
+
+.not-yet-image-three {
+    height: 300px;
+    padding-top: 100px;
+}
+
+.not-yet-text-three {
+    color: #d60d39;
+}
+
+.not-yet-sub-text-three {
+    color: #3a3939;
+    margin-bottom: 75px;
+}
+
+
+
