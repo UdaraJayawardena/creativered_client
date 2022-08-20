@@ -138,6 +138,7 @@ export class ItemViewComponent implements OnInit {
         this.tempAllItem = [];
         this.itemService.getItemByProductId(productId)
             .subscribe((result: Array<Items>) => {
+                console.log(result)
                 if (result.length !== 0) {
                     this.noItemFound = false;
                     for (let i = 0; i < result.length; i++) {

@@ -9,12 +9,12 @@
              tooltip="Discount {{item.discount}} %" placement="top">
             <div (click)="goProductView(item)" style="text-align: center;">
                 <img src="{{ item.image }}" class="image-size img-fluid">
-                <div *ngIf="item.discount !== 0" class="price-text">$ {{item.price - (item.price / item.discount) |
+                <div *ngIf="item.discount !== 0" class="price-text">LKR {{item.price - (item.price / item.discount) |
                     number:'1.2-2'}}
                 </div>
-                <div *ngIf="item.discount === 0" class="price-text">$ {{item.price | number:'1.2-2'}}
+                <div *ngIf="item.discount === 0" class="price-text">LKR {{item.price | number:'1.2-2'}}
                 </div>
-                <div class="real-price">$ {{item.price}}</div>
+                <div class="real-price">LKR {{item.price}}</div>
                 <div class="name-text">{{item.name}}</div>
             </div>
         </div>

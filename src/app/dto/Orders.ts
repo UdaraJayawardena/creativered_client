@@ -50,3 +50,26 @@ export class Orders1 {
         this.shippingid = shippingid;
     }
 }
+
+export class Orders2 {
+    status: string;
+    paymentMethod: string;
+    paymentId: number;
+    trackingId: number;
+    customerId: number;
+    billingAddressDetails: any;
+    shippingAddressDetails: any;
+    itemDetails: any;
+
+    constructor(status: string, paymentMethod: string, paymentId: number, trackingId: number, customerId: number, billingAddressDetails: any, shippingAddressDetails: any, itemDetails: any) {
+        this.status = status;
+        this.paymentMethod = paymentMethod;
+        this.paymentId = paymentId;
+        this.trackingId = trackingId;
+        this.customerId = customerId;
+        this.billingAddressDetails = billingAddressDetails;
+        this.shippingAddressDetails = shippingAddressDetails;
+        this.itemDetails = itemDetails;
+    }
+}
+

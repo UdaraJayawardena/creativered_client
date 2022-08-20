@@ -1,25 +1,38 @@
-import {Component, OnInit} from '@angular/core';
-import {PaymentServiceService} from '../../services/payment-service.service';
-import {HttpClient} from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { PaymentServiceService } from '../../services/payment-service.service';
+import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
-import {ItemServiceService} from '../../services/item-service.service';
-import {ShippingServiceService} from '../../services/shipping-service.service';
-import {BillingAddressServiceService} from '../../services/billing-address-service.service';
-import {MoneyServiceService} from '../../services/money-service.service';
-import {MailServiceService} from '../../services/mail-service.service';
-import {Router} from '@angular/router';
-import {CartItem} from '../../dto/CartItem';
-import {Orders, Orders1} from '../../dto/Orders';
-import {OrderDetail} from '../../dto/OrderDetail';
-import {Items} from '../../dto/Items';
-import {CartServiceService} from '../../services/cart-service.service';
-import {NgxSpinnerService} from 'ngx-spinner';
+import { ItemServiceService } from '../../services/item-service.service';
+import { ShippingServiceService } from '../../services/shipping-service.service';
+import { BillingAddressServiceService } from '../../services/billing-address-service.service';
+import { MoneyServiceService } from '../../services/money-service.service';
+import { MailServiceService } from '../../services/mail-service.service';
+import { Router } from '@angular/router';
+import { CartItem } from '../../dto/CartItem';
+import { Orders, Orders1, Orders2 } from '../../dto/Orders';
+import { OrderDetail } from '../../dto/OrderDetail';
+import { Items } from '../../dto/Items';
+import { CartServiceService } from '../../services/cart-service.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
     selector: 'app-stripe-paypal',
     templateUrl: './stripe-paypal.component.html',
     styleUrls: ['./stripe-paypal.component.css']
 })
+
+// class item {
+//     itemId: number;
+//     name: string;
+//     age: number;
+
+//     constructor(id: number, name: string, age: number) {
+//       this.id = id;
+//       this.name = name;
+//       this.age = age;
+//     }
+// }
 export class StripePaypalComponent implements OnInit {
 
     public tot = 0;
@@ -62,10 +75,10 @@ export class StripePaypalComponent implements OnInit {
     public wrongCvv = false;
 
     // public cardRegex = new RegExp('^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]' +
-    //     '{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\\d{3})\\d{11})$');
-    public monthRegex = new RegExp('^(0?[1-9]|1[012])$');
-    public yearRegex = new RegExp('^\\d{4}$');
-    public cvcRegex = new RegExp('^[0-9]{3,4}$');
+    //     '{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\\d{3})\\d{11})LKR');
+    public monthRegex = new RegExp('^(0?[1-9]|1[012])LKR');
+    public yearRegex = new RegExp('^\\d{4}LKR');
+    public cvcRegex = new RegExp('^[0-9]{3,4}LKR');
 
     openCheckout(cardno, month, year, cvc) {
         console.log(cardno);
@@ -195,9 +208,9 @@ export class StripePaypalComponent implements OnInit {
     }
 
     constructor(private paymentService: PaymentServiceService, private http: HttpClient, private itemService: ItemServiceService,
-                private shippingService: ShippingServiceService, private billingService: BillingAddressServiceService,
-                private moneyService: MoneyServiceService, private mailService: MailServiceService,
-                private router: Router, private cartService: CartServiceService, private spinner: NgxSpinnerService) {
+        private shippingService: ShippingServiceService, private billingService: BillingAddressServiceService,
+        private moneyService: MoneyServiceService, private mailService: MailServiceService,
+        private router: Router, private cartService: CartServiceService, private spinner: NgxSpinnerService) {
     }
 
     ngOnInit(): void {
@@ -209,7 +222,7 @@ export class StripePaypalComponent implements OnInit {
 
     paypalPayment() {
         this.paymentType = 'paypal';
-        this.http.post('http://ec2-3-111-113-150.ap-south-1.compute.amazonaws.com:3000/buy', {amount: this.tot}).subscribe((result) => {
+        this.http.post('http://ec2-3-111-113-150.ap-south-1.compute.amazonaws.com:3000/buy', { amount: this.tot }).subscribe((result) => {
             const x = JSON.stringify(result);
             this.getPaymentId(JSON.parse(x).url);
         });
@@ -394,7 +407,7 @@ export class StripePaypalComponent implements OnInit {
                 '' + this.sAddressLine2 + ' <br>\n' +
                 '    ' + this.bCity + ' <br> ' + this.bCountry + ' <br> ' + this.sPostalCode + '</span></span>\n' +
                 '  </div> <div style="width: 100%; font-size: 12px; margin: 10px; font-weight: bold;">\n' +
-                '    <span>Total order price : $' + this.realTot + '</span>\n' +
+                '    <span>Total order price : LKR' + this.realTot + '</span>\n' +
                 '  </div><div style="width: 100%; font-size: 12px; margin: 10px; font-weight: bold;">\n' +
                 '    <span>Payment method : ' + this.paymentType + '</span>\n' +
                 '  </div>\n' +
@@ -408,5 +421,63 @@ export class StripePaypalComponent implements OnInit {
         }).subscribe((result2) => {
             Swal.fire('Success', 'Email sent successfully ...!', 'success');
         });
+    }
+
+    public completeOrder() {
+        let shippingAddressDetails: any = JSON.parse(localStorage.getItem('newShippingAddress'))
+
+        const oldShippingAddress: any = JSON.parse(localStorage.getItem('oldShippingAddress'));
+        const oldBillingAddress: any = JSON.parse(localStorage.getItem('oldBillingAddress'));
+
+        const billingAddressDetails: any = JSON.parse(localStorage.getItem('newBillingAddress'));
+
+        const itemsArr: Array<any> = JSON.parse(localStorage.getItem('cartItemList'));
+        console.log(JSON.parse(shippingAddressDetails), JSON.parse(billingAddressDetails));
+        const userId = localStorage.getItem('userId')
+        // const { customerShippingId, ...shippingAddressDetails} = modifiedShippingData;
+
+        // let modifiedItemsArr = itemsArr.map(item => ({
+        //     itemId: item.id,
+        //     qty: item.cartQty,
+        //     color: item.color, 
+        //     price: item.price
+        // }))
+
+        let modifiedItemsArr = itemsArr.map(item => {
+            return {
+                itemid: item.id,
+                qty: item.cartQty,
+                color: item.color,
+                price: item.price
+            }
+        });
+
+        this.moneyService.completeOrder(new Orders2(
+            'OK',
+            'card',
+            0,
+            0,
+            Number(userId),
+            billingAddressDetails == undefined ? oldBillingAddress : billingAddressDetails,
+            shippingAddressDetails == undefined ? oldShippingAddress : shippingAddressDetails,
+            modifiedItemsArr
+        )).subscribe(result => {
+            console.log(result);
+
+            localStorage.removeItem('newShippingAddress');
+            localStorage.removeItem('newBillingAddress');
+            localStorage.removeItem('cartItemList');
+            Swal.fire(
+                'Order Complete',
+                '',
+                'success'
+            )
+            this.router.navigate(['/home'])
+        }, (error) => {
+            console.log(error)
+        })
+
+
+        console.log('helooo', modifiedItemsArr)
     }
 }

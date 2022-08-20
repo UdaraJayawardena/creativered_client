@@ -60,9 +60,9 @@
         <span class="tooltiptext">Discount</span>
         <div class="card-body">
             <h5 class="card-title card-title-style">{{item.name}}</h5>
-            <h5 *ngIf="item.discount !== 0" class="card-title card-title-style-one">$ {{item.price - (item.price /
+            <h5 *ngIf="item.discount !== 0" class="card-title card-title-style-one">LKR {{item.price - (item.price /
                 item.discount) | number:'1.2-2'}}</h5>
-            <h5 *ngIf="item.discount === 0" class="card-title card-title-style-one">$ {{item.price |
+            <h5 *ngIf="item.discount === 0" class="card-title card-title-style-one">LKR {{item.price |
                 number:'1.2-2'}}</h5>
         </div>
         <ul class="list-group list-group-flush">

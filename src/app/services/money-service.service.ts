@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Customers} from '../dto/Customer';
 import {ShippingAddress} from '../dto/ShippingAddress';
-import {Orders1} from '../dto/Orders';
+import {Orders1, Orders2} from '../dto/Orders';
 import {OrderDetail} from '../dto/OrderDetail';
 import {Items} from '../dto/Items';
 import {environment} from '../../environments/environment.prod';
@@ -54,5 +54,9 @@ export class MoneyServiceService {
 
     updateItem(newit: Items) {
         return this.http.put(environment.baseUrl + '/Items' + '?access_token=' + localStorage.getItem('tokenId'), newit);
+    }
+
+    completeOrder(orderObj: Orders2) {
+        return this.http.post(environment.baseUrl + '/Orders/completePurchase' + '?access_token=' + localStorage.getItem('tokenId'), orderObj);
     }
 }

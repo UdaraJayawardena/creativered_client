@@ -14,7 +14,7 @@
     <br>
     <div class="row" style="color: #d60d39; font-weight: bold;">
         <div class="col-4" style="text-align: left; font-weight: bold;">price :</div>
-        <div class="col-8" style="text-align: left; text-decoration: line-through;">{{price | currency: 'USD'}}</div>
+        <div class="col-8" style="text-align: left; text-decoration: line-through;">{{price | currency: 'LKR'}}</div>
     </div>
     <div class="row" style="color: #d60d39; font-weight: bold;">
         <div class="col-4" style="text-align: left; font-weight: bold;">discount :</div>
@@ -22,10 +22,10 @@
     </div>
     <div class="row" style="color: #d60d39; font-weight: bold">
         <div class="col-4" style="text-align: left; font-weight: bold;">sale price :</div>
-        <div *ngIf="discount !== 0" class="col-8" style="text-align: left; ">$ {{price - (price / discount) |
+        <div *ngIf="discount !== 0" class="col-8" style="text-align: left; ">LKR {{price - (price / discount) |
             number:'1.2-2'}}
         </div>
-        <div *ngIf="discount === 0" class="col-8" style="text-align: left; ">$ {{price | number:'1.2-2'}}
+        <div *ngIf="discount === 0" class="col-8" style="text-align: left; ">LKR {{price | number:'1.2-2'}}
         </div>
     </div>
     <br>

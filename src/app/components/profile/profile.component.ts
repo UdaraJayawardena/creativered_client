@@ -7,10 +7,12 @@ import {Customerss, ResetCustomer, UpdateCustomer} from '../../dto/Customer';
 import Swal from 'sweetalert2';
 import {Complain} from '../../dto/Complain';
 import {ComplainServiceService} from '../../services/complain-service.service';
+import {OrderServiceService} from '../../services/order-service.service';
 import {ComplainReply} from '../../dto/ComplainReply';
 import {CountriesService} from '../../services/countries.service';
 import {ShippingServiceService} from '../../services/shipping-service.service';
 import {Countries} from '../../dto/Countries';
+import { OrderDetail2 } from 'src/app/dto/OrderDetail';
 
 @Component({
     selector: 'app-profile',
@@ -39,6 +41,7 @@ export class ProfileComponent implements OnInit {
     public haveBillingAddress = true;
     public haveShippingAddres = true;
     public allCounties: Array<Countries> = [];
+    public orderList: Array<OrderDetail2> = [];
 
     public complaint: any = [];
     public reply: ComplainReply = new ComplainReply('', '', '', 0, 0, 0);
@@ -81,7 +84,7 @@ export class ProfileComponent implements OnInit {
 
     constructor(private billing: BillingAddressServiceService, private customerService: CustomerServiceService,
                 private complainService: ComplainServiceService, private countryService: CountriesService,
-                private shippingService: ShippingServiceService) {
+                private shippingService: ShippingServiceService, private orderService: OrderServiceService) {
     }
 
     ngOnInit() {
@@ -90,6 +93,7 @@ export class ProfileComponent implements OnInit {
         this.setCustomerDetails();
         this.getOrdersByCustomerId();
         this.getAllCountries();
+        this.getOrdersByCustomer();
     }
 
     public getAllCountries() {
@@ -571,5 +575,14 @@ export class ProfileComponent implements OnInit {
                     });
             }
         }
+    }
+    public getOrdersByCustomer() {
+        this.orderService.getOrdersByCustomerId(Number(localStorage.getItem('userId')))
+        .subscribe((result: any) => {
+            console.log(result)
+            this.orderList = result.data;
+            console.log(this.orderList)
+        })
+        
     }
 }

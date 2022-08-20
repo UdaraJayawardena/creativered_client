@@ -12,8 +12,8 @@ export class OrderServiceService {
     constructor(private http: HttpClient) {
     }
 
-    getOrdersByCustomerEmail(email) {
-        return this.http.get(environment.baseUrl + '/Orders/' + email + '/customer');
+    getOrdersByCustomerId(id) {
+        return this.http.get(environment.baseUrl + `/Orders/fetchOrderbyUserId?userId=${id}`);
     }
 
     addOrder(order: Orders) {
