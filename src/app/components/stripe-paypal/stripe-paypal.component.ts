@@ -432,7 +432,7 @@ export class StripePaypalComponent implements OnInit {
         const billingAddressDetails: any = JSON.parse(localStorage.getItem('newBillingAddress'));
 
         const itemsArr: Array<any> = JSON.parse(localStorage.getItem('cartItemList'));
-        console.log(JSON.parse(shippingAddressDetails), JSON.parse(billingAddressDetails));
+        // console.log(JSON.parse(shippingAddressDetails), JSON.parse(billingAddressDetails));
         const userId = localStorage.getItem('userId')
         // const { customerShippingId, ...shippingAddressDetails} = modifiedShippingData;
 
@@ -454,7 +454,7 @@ export class StripePaypalComponent implements OnInit {
 
         this.moneyService.completeOrder(new Orders2(
             'OK',
-            'card',
+            'cash on delivery',
             0,
             0,
             Number(userId),

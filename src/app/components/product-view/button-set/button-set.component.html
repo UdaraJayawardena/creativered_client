@@ -6,7 +6,7 @@
                class="qty-text-input qty-input" title="qty" (change)="setPrice(qtyval.value)"
                (click)="setPrice(qtyval.value)">
     </div>
-    <div class="price-text">{{orderPrice | currency:'USD'}}</div>
+    <div class="price-text">{{orderPrice | currency:'LKR '}}</div>
     <img src="{{widhListImage}}" class="wish-list" (click)="goWishList()" (mouseenter)="changeImageEnter()"
          (mouseleave)="changeImageLeave()">
     <div>

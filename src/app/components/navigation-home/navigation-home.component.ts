@@ -160,7 +160,7 @@ export class NavigationHomeComponent implements OnInit {
     }
 
     logOut() {
-
+        localStorage.clear();
         Swal.fire({
             title: '',
             text: 'You won\'t be able to logout ?',
